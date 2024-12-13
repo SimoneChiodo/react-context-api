@@ -8,21 +8,20 @@ const PostsContext = createContext();
 // Esporto il Provider
 export const PostsContextProvider = ({ children }) => {
     // Creo l'array di post
-    const [postsData, setPostsData] = useState({
-        posts: [],
-    });
+    const [postsData, setPostsData] = useState([]);
 
     useEffect(() => {
         Index();
     }, []);
 
     // Index Function (Inizializzo l'array di post)
-    const Index = () =>
+    function Index() {
         fetch(`${apiUrl}/posts`)
             .then((res) => res.json())
             .then((data) => {
                 setPostsData(data);
             });
+    }
 
     return (
         <PostsContext.Provider value={postsData}>
