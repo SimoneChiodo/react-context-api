@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+// Contexts
+import { PostsContextProvider } from "./contexts/PostsContext";
+
 // Components
 import PostsPage from "./PostsPage";
 
@@ -16,7 +19,9 @@ function App() {
 
     return (
         <>
-            <PostsPage />
+            <PostsContextProvider>
+                <PostsPage />
+            </PostsContextProvider>
         </>
     );
 }
