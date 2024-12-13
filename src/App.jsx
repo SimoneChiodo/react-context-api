@@ -1,14 +1,24 @@
 import { useState } from "react";
 
-// Bootstrap JS
-import * as bootstrap from "bootstrap";
+// Components
+import PostsPage from "./PostsPage";
+
+//Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
 // Custom CSS
 import "./assets/App.css";
+
+// Bootstrap JS
+import * as bootstrap from "bootstrap";
 
 function App() {
     const [count, setCount] = useState(0);
 
-    return <></>;
+    return (
+        <>
+            <PostsPage />
+        </>
+    );
 }
 
 export default App;
